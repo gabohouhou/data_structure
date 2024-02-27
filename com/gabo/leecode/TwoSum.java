@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Description: 01.两数之和
+ * @Description: 01.两数之和 simple
  * @Author: gabo
  * @Date: 2024/02/20 21:54
  **/

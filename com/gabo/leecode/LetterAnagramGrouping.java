@@ -3,7 +3,7 @@ package com.gabo.leecode;
 import java.util.*;
 
 /**
- * @Description: 49. 字母异位词分组
+ * @Description: 49. 字母异位词分组 mid
  * @Author: gabo
  * @Date: 2024/02/20 22:27
  **/
