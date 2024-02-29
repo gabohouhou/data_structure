@@ -17,29 +17,17 @@ public class LetterAnagramGrouping {
         if (strs == null) {
             return new ArrayList<>();
         }
-        Map<String,Integer> map = new HashMap<>();
-        List<List<String>> resList = new ArrayList<>();
-        for (int i=0;i<strs.length;i++) {
-            String str = strs[i];
-            char[] chars = str.toCharArray();
-            Arrays.sort(chars);
-            if (map.containsKey(chars.toString())) {
-                for (List<String> list : resList) {
-                    String s = list.get(0);
-                    char[] chars1 = s.toCharArray();
-                    Arrays.sort(chars1);
-                    if (chars1.equals(chars)) {
-                        list.add(strs[i]);
-                        break;
-                    }
-                }
-                continue;
+        Map<String,List<String>> map = new HashMap<>();
+        for (String str : strs) {
+            char[] charArray = str.toCharArray();
+            Arrays.sort(charArray);
+            String sortedStr = String.valueOf(charArray);
+            if (!map.containsKey(sortedStr)) {
+                map.put(sortedStr,new ArrayList<>());
             }
-            List<String> list = new ArrayList<>();
-            list.add(strs[i]);
-            map.put(chars.toString(),0);
-            resList.add(list);
+            map.get(sortedStr).add(str);
         }
-        return null;
+        return new ArrayList<>(map.values());
+
     }
 }
